@@ -10,17 +10,18 @@ import "../style/index.css";
         avatarURL: "https://randomuser.me/api/portraits/women/42.jpg", // this is the url for the profile avatar
         socialMediaPosition: "right", // social media bar position (left or right)
         
-        twitter: null, // social media usernames
+        let twitter= Your Twitter, // social media usernames
         github: null,
         linkedin: null,
         instagram: null,
 
-        name: null,
+        name: null;
         lastName: null,
         role: null,
         country: null,
         city: null
     }
+    
  */
 function render(variables = {}) {
   console.log("These are the current variables: ", variables); // print on the console
@@ -33,10 +34,15 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
+        <h1>${variables.name ? variables.name : "Your Name"} ${
+    variables.lastName ? variables.lastName : "Your Last Name"
+  }</h1>
+    <h2>${variables.role ? variables.role : "Role no definido"}</h2>
+    <h3>${variables.city ? variables.city : "City no definida"},
+    ${
+      variables.country ? variables.country : "Country no definido"
+    }</h3>         
+     <ul class="position-right">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
