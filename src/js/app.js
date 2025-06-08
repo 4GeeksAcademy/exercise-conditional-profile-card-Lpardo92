@@ -39,10 +39,8 @@ function render(variables = {}) {
   }</h1>
     <h2>${variables.role ? variables.role : "Role no definido"}</h2>
     <h3>${variables.city ? variables.city : "City no definida"},
-    ${
-      variables.country ? variables.country : "Country no definido"
-    }</h3>         
-     <ul class="position-right">
+    ${variables.country ? variables.country : "Country no definido"}</h3>   
+     <ul class="${variables.socialMediaPosition || "position-right"}"
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
